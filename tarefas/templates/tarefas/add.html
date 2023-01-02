@@ -1,0 +1,15 @@
+{% extends "tarefas/layout.html" %}
+
+{% block head %}
+    <title>Adicionando tarefas</title>
+{% endblock %}
+
+{% block body %}
+<h1>Adicionado tarefas</h1>
+    <form action="{% url 'tarefas:add' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Adicionar">
+    </form>
+    <a href="{% url 'tarefas:index' %}" rel="previous">Lista de suas tarefas</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "tarefas/layout.html" %}
+
+{% block head %}
+    <title>Tarefas</title>
+{% endblock %}
+
+{% block body %}
+<h1>Lista de afazeres</h1>
+    <ul>
+        {% for tarefa in tarefas %}
+        <li>{{tarefa}}</li>
+        {% empty %}
+            <li>No tasks</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'tarefas:add' %}" rel="internal">Adicione uma nova tarefa</a>
+{% endblock %}
